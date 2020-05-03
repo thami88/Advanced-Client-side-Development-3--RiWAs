@@ -181,5 +181,49 @@ public class Item {
 		return output;
 		
 	} // End of the Update Method /---------------------------------------------------------------------
+	
+	
+	// Delete Method /----------------------------------------------------------------------------------
+	
+	public String deleteItem(String itemID) {
+		
+		String output = "";
+		
+		try {
+			
+			Connection con = connect();
+			
+			if (con == null) {
+				
+				return "Error while connecting to the database for Deleting.";
+				
+			}
+			
+			// Create a Prepared Statement
+			String query = "delete from items where itemID=?";
+			
+			PreparedStatement preparedStmt = con.prepareStatement(query);
+			
+			// Binding Values
+			preparedStmt.setInt(1, Integer.parseInt(itemID));
+			
+			// Execute the Statement
+			preparedStmt.execute();
+			con.close();
+			
+			String newItems = readItems();
+			output = "{\"status\":\"success\", \"data\": \"" + newItems + "\"}";
+			
+			
+		} catch (Exception e) {
+			
+			// Handle exception
+			output = "{\"status\":\"error\", \"data\": \"Error while deleting the item.\"}"; 
+			System.err.println(e.getMessage());
+		}
+		
+		return output;
+		
+	}
 
 }

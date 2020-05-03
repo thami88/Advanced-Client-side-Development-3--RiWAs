@@ -90,6 +90,12 @@ public class ItemsAPI extends HttpServlet {
 
 
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		Map paras = getParasMap(request);
+		
+		String output = itemObj.deleteItem(paras.get("itemID").toString());
+		
+		response.getWriter().write(output); 
 
 	}
 

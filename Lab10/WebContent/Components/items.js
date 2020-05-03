@@ -20,7 +20,22 @@ $(document).on("click", "#btnSave", function(event) {
 		return;
 	}
 	// If valid------------------------
-	$("#formItem").submit();
+	var type = ($("#hidItemIDSave").val() == "") ? "POST" : "PUT";
+	
+	$.ajax({
+		
+		url : "ItemsAPI",
+		type : type,
+		data : $("#formItem").serialize(),
+		dataType : "text",
+		complete : function(response, status){
+			
+			onItemSaveComplete(response.responseText, status); 
+			
+		}
+		
+	});
+	
 });
 
 // UPDATE==========================================

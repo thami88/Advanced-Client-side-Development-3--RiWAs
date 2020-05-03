@@ -152,7 +152,7 @@ public class Item {
 				
 			}
 			
-			// Create a preapred statement
+			// Create a prepared statement
 			String query = "UPDATE items SET itemCode=?,itemName=?,itemPrice=?,itemDesc=? WHERE itemID=?";
 			
 			PreparedStatement preparedStmt = con.prepareStatement(query);

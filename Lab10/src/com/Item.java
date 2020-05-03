@@ -80,12 +80,60 @@ public class Item {
 			
 			// Handle exception
 			output = "Error while reading the items.";
-			System.out.println(e.getMessage());
+			System.err.println(e.getMessage());
 			
 		}
 		
 		return output;
 		
-	}
+	} // End of Read Method /-----------------------------------------------------------------------------
+	
+	
+	// Insert Method /------------------------------------------------------------------------------------
+	
+	public String insertItem(String code, String name, String price, String desc) {
+		
+		String output = "";
+		
+		try {
+			
+			Connection con = connect();
+			
+			if (con == null) {
+				
+				return "Error while connecting to the database for Inserting.";
+				
+			}
+			
+			// Create a prepared statement
+			String query = " insert into items (`itemID`,`itemCode`,`itemName`,`itemPrice`,`itemDesc`)" + " values (?, ?, ?, ?, ?)";
+			
+			PreparedStatement preparedStmt = con.prepareStatement(query);
+			
+			// Binding Values
+			preparedStmt.setInt(1, 0);
+			preparedStmt.setString(2, code);
+			preparedStmt.setString(3, name);
+			preparedStmt.setDouble(4, Double.parseDouble(price));
+			preparedStmt.setString(5, desc);
+			
+			// Execute the statement
+			preparedStmt.execute();
+			con.close();
+			
+			String newItems = readItems();
+			output = "{\"status\":\"success\", \"data\": \"" + newItems + "\"}";
+			
+		} catch (Exception e) {
+			
+			// Handle exception
+			output = "{\"status\":\"error\", \"data\": \"Error while inserting the item.\"}";
+			
+			System.err.println(e.getMessage());
+		}
+		
+		return output;
+		
+	} // End of Insert Method /------------------------------------------------------------------------
 
 }

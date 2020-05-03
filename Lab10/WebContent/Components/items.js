@@ -19,6 +19,7 @@ $(document).on("click", "#btnSave", function(event) {
 		$("#alertError").show();
 		return;
 	}
+	
 	// If valid------------------------
 	var type = ($("#hidItemIDSave").val() == "") ? "POST" : "PUT";
 	
@@ -75,7 +76,7 @@ function onItemSaveComplete(response, status){
 	
 }
 
-// UPDATE==========================================
+// UPDATE=======================================================================================
 $(document).on("click", ".btnUpdate", function(event) 
 		{
 			$("#hidItemIDSave").val($(this).closest("tr").find('#hidItemIDUpdate').val());
@@ -85,7 +86,62 @@ $(document).on("click", ".btnUpdate", function(event)
 			$("#itemDesc").val($(this).closest("tr").find('td:eq(3)').text());
 		});
 
-// CLIENT-MODEL================================================================
+// DELETE========================================================================================
+$(document).on("click", ".btnRemove", function(event){
+	
+	$.ajax({
+		
+		url : "ItemsAPI",
+		type : "DELETE",
+		data : "itemID=" + $(this).data("itemid"),
+		dataType : "text",
+		complete : function(response, status){
+			
+			onItemDeleteComplete(response.responseText, status); 
+			
+		}
+		
+	});
+	
+});
+
+function onItemDeleteComplete(response, status){
+	
+	if (status == "success") {
+		
+		var resultSet = JSON.parse(response);
+		
+		if (resultSet.status.trim() == "success") {
+			
+			$("#alertSuccess").text("Successfully Deleted.");
+			$("#alertSuccess").show();
+			
+			$("#divItemsGrid").html(resultSet.data);
+			
+		} else if (resultSet.status.trim() == "error") {
+			
+			$("#alertError").text(resultSet.data);
+			$("#alertError").show(); 
+
+		}
+		
+	} else if (status == "error") {
+		
+		$("#alertError").text("Error while Deleting.");
+		$("#alertError").show();
+
+	} else {
+		
+		$("#alertError").text("Unknown error while deleting..");
+		$("#alertError").show(); 
+		
+	}
+	
+}
+
+
+
+// CLIENT-MODEL==================================================================================
 function validateItemForm() {
 	// CODE
 	if ($("#itemCode").val().trim() == "") {

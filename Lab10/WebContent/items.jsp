@@ -90,7 +90,7 @@
 							class="form-control mb-4" placeholder="Item Description:"><br>
 
 						<input id="btnSave" name="btnSave" type="button" value="Save"
-							class="btn btn-primary"> <input type="hidden"
+							class="btn btn-light-green"> <input type="hidden"
 							id="hidItemIDSave" name="hidItemIDSave" value="">
 
 					</form><br>

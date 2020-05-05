@@ -42,7 +42,7 @@ public class Item {
 			}
 			
 			//  Prepare the html table to be displayed
-			output = "<table border='1'><tr><th>Item Code</th> <th>Item Name</th><th>Item Price</th>"  
+			output = "<table class='table'><tr><th>Item Code</th> <th>Item Name</th><th>Item Price</th>"  
 					+ "<th>Item Description</th> <th>Update</th><th>Remove</th></tr>";
 			
 			String query = "select * from items";
@@ -65,8 +65,7 @@ public class Item {
 				output += "<td>" + itemDesc + "</td>"; 
 				
 				// Update Delete Buttons
-				output += "<td><input name='btnUpdate' type='button' value='Update' class='btnUpdate btn btn-secondary'></td>"
-						+ "<td><input name='btnRemove' type='button' value='Remove' class='btnRemove btn btn-danger' data-itemid='" + itemID + "'>" + "</td></tr>"; 
+				output += "<td><input name='btnUpdate' type='button' value='Update' class='btnUpdate btn btn-secondary'></td><td><input name='btnRemove' type='button' value='Remove' class='btnRemove btn btn-danger' data-itemid='" + itemID + "'>" + "</td></tr>"; 
 				
 			}
 			
@@ -148,7 +147,7 @@ public class Item {
 			
 			if (con == null) {
 				
-				return " Error while connecting to the database for Updating.";
+				return "Error while connecting to the database for Updating.";
 				
 			}
 			

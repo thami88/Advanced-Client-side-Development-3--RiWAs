@@ -30,7 +30,7 @@ public class ItemsAPI extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+//		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	
@@ -44,6 +44,31 @@ public class ItemsAPI extends HttpServlet {
 		
 	}
 	
+
+	
+	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		Map paras = getParasMap(request);
+		
+		String output = itemObj.updateItem(paras.get("hidItemIDSave").toString(),
+				paras.get("itemCode").toString(),
+				paras.get("itemName").toString(),
+				paras.get("itemPrice").toString(),
+				paras.get("itemDesc").toString());
+		response.getWriter().write(output);
+		
+	}
+
+
+	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		Map paras = getParasMap(request);
+		
+		String output = itemObj.deleteItem(paras.get("itemID").toString());
+		
+		response.getWriter().write(output); 
+
+	}
 	
 	// Convert request parameters to a Map
 	private static Map getParasMap(HttpServletRequest request) {
@@ -72,31 +97,6 @@ public class ItemsAPI extends HttpServlet {
 		}
 		
 		return map;
-	}
-
-	
-	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		Map paras = getParasMap(request);
-		
-		String output = itemObj.updateItem(paras.get("hidItemIDSave").toString(),
-				paras.get("itemCode").toString(),
-				paras.get("itemName").toString(),
-				paras.get("itemPrice").toString(),
-				paras.get("itemDesc").toString());
-		response.getWriter().write(output);
-		
-	}
-
-
-	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		Map paras = getParasMap(request);
-		
-		String output = itemObj.deleteItem(paras.get("itemID").toString());
-		
-		response.getWriter().write(output); 
-
 	}
 
 }

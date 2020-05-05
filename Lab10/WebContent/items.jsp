@@ -44,6 +44,8 @@
 	</div>
 	</div>
 	</div>
+	
+	<footer class="page-footer font-small mdb-color lighten-3 pt-4"></footer>
 
 </body>
 </html>

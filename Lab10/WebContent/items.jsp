@@ -22,7 +22,7 @@
 <body>
 
 <!--Navbar-->
-<nav class="navbar navbar-expand-lg navbar-dark primary-color">
+<nav class="navbar navbar-expand-lg navbar-dark primary-color mb-3">
 <!-- Collapse button -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
     aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,7 +52,12 @@
 
 <!-- ---------------------------- End of Nav ----------------------------- -->
 
-<!-- ---------------------------- Start of Jumborone ----------------------------- -->
+
+	<div class="container-fluid">
+	
+	<div class="row">
+	<div class="col">
+	<!-- ---------------------------- Start of Jumborone ----------------------------- -->
 
 <div class="jumbotron card card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg);">
   <div class="text-white text-center py-5 px-4">
@@ -63,18 +68,21 @@
 </div>
 
 <!-- ---------------------------- End of Jumborone ----------------------------- -->
-
-
+	</div>
+	</div>
+	
 	<div class="container">
-	<div class="row">
-	<div class="col-6">
+    <div class="row">
+	<div class="col">
 		
-		<form id="formItem" name="formItem">
+		<form id="formItem" name="formItem" class="text-center border border-light p-5">
 		
-			Item Code: <input id="itemCode" name="itemCode" type="text" class="form-control form-control-sm"><br>
-			Item Name: <input id="itemName" name="itemName" type="text" class="form-control form-control-sm"><br>
-			Item Price: <input id="itemPrice" name="itemPrice" type="text" class="form-control form-control-sm"><br>
-			Item Description: <input id="itemDesc" name="itemDesc" type="text" class="form-control form-control-sm"><br>
+			<p class="h4 mb-4">Manage Items</p>
+		
+			<input id="itemCode" name="itemCode" type="text" class="form-control mb-4" placeholder="Item Code:"><br>
+			 <input id="itemName" name="itemName" type="text" class="form-control mb-4" placeholder="Item Name:"><br>
+			<input id="itemPrice" name="itemPrice" type="text" class="form-control mb-4" placeholder="Item Price:"><br>
+			 <input id="itemDesc" name="itemDesc" type="text" class="form-control mb-4" placeholder="Item Description:"><br>
 		
 			<input id="btnSave" name="btnSave" type="button" value="Save" class="btn btn-primary">
 			<input type="hidden" id="hidItemIDSave" name="hidItemIDSave"  value="">
@@ -86,13 +94,16 @@
 		
 		</div><!-- End of Column -->
 		</div><!-- End of 1st Row -->
+		</div>
 		
 		<div class="row">
+		<div class="col">
 		<div id="divItemsGrid">
 			<%
 				Item itemObj = new Item();
 				out.print(itemObj.readItems()); 
 			%>
+		</div>
 		</div>
 		
 	</div><!-- End of 2nd Row  -->

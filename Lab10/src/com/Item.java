@@ -42,7 +42,7 @@ public class Item {
 			}
 			
 			//  Prepare the html table to be displayed
-			output = "<div class='table-responsive'> <table class='table table-hover table-bordered'><thead class='black white-text'><tr><th>Item Code</th> <th>Item Name</th><th>Item Price</th>"  
+			output = "<div class='table-responsive text-center'> <table class='table table-hover table-bordered'><thead class='black white-text'><tr><th>Item Code</th> <th>Item Name</th><th>Item Price</th>"  
 					+ "<th>Item Description</th> <th>Update</th><th>Remove</th></tr></thead>";
 			
 			String query = "select * from items";

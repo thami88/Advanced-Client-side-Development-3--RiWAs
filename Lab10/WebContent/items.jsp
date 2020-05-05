@@ -10,16 +10,11 @@
 <title>Items Management</title>
 
 <!-- Font Awesome -->
-<link rel="stylesheet"
-	href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
 <!-- Bootstrap core CSS -->
-<link
-	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
-	rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 <!-- Material Design Bootstrap -->
-<link
-	href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/css/mdb.min.css"
-	rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/css/mdb.min.css" rel="stylesheet">
 
 <script src="Components/jquery-3.5.0.min.js"></script>
 <script src="Components/items.js"></script>
@@ -98,11 +93,10 @@
 							class="btn btn-primary"> <input type="hidden"
 							id="hidItemIDSave" name="hidItemIDSave" value="">
 
-					</form>
+					</form><br>
 
 					<div id="alertSuccess" class="alert alert-success"></div>
 					<div id="alertError" class="alert alert-danger"></div>
-					<br>
 
 				</div>
 				<!-- End of Column -->

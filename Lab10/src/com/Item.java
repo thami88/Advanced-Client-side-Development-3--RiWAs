@@ -65,7 +65,7 @@ public class Item {
 				output += "<td>" + itemDesc + "</td>"; 
 				
 				// Update Delete Buttons
-				output += "<td><input name='btnUpdate' type='button' value='Update' class='btnUpdate btn btn-secondary btn-sm'></td><td><input name='btnRemove' type='button' value='Remove' class='btnRemove btn btn-danger btn-sm' data-itemid='" + itemID + "'>" + "</td></tr>"; 
+				output += "<td><input name='btnUpdate' type='button' value='Update' class='btnUpdate btn btn-warning btn-sm'></td><td><input name='btnRemove' type='button' value='Remove' class='btnRemove btn btn-danger btn-sm' data-itemid='" + itemID + "'>" + "</td></tr>"; 
 				
 			}
 			

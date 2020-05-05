@@ -42,8 +42,8 @@ public class Item {
 			}
 			
 			//  Prepare the html table to be displayed
-			output = "<table class='table'><tr><th>Item Code</th> <th>Item Name</th><th>Item Price</th>"  
-					+ "<th>Item Description</th> <th>Update</th><th>Remove</th></tr>";
+			output = "<div class='table-responsive'> <table class='table table-hover table-bordered'><thead class='black white-text'><tr><th>Item Code</th> <th>Item Name</th><th>Item Price</th>"  
+					+ "<th>Item Description</th> <th>Update</th><th>Remove</th></tr></thead>";
 			
 			String query = "select * from items";
 			Statement stmt = con.createStatement();
@@ -65,14 +65,14 @@ public class Item {
 				output += "<td>" + itemDesc + "</td>"; 
 				
 				// Update Delete Buttons
-				output += "<td><input name='btnUpdate' type='button' value='Update' class='btnUpdate btn btn-secondary'></td><td><input name='btnRemove' type='button' value='Remove' class='btnRemove btn btn-danger' data-itemid='" + itemID + "'>" + "</td></tr>"; 
+				output += "<td><input name='btnUpdate' type='button' value='Update' class='btnUpdate btn btn-secondary btn-sm'></td><td><input name='btnRemove' type='button' value='Remove' class='btnRemove btn btn-danger btn-sm' data-itemid='" + itemID + "'>" + "</td></tr>"; 
 				
 			}
 			
 			con.close();
 			
 			// Complete the html table
-			output += "</table>";
+			output += "</table></div>";
 			
 			
 		} catch (Exception e) {

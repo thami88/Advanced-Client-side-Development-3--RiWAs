@@ -41,6 +41,10 @@
 		<div id="alertSuccess" class="alert alert-success"></div>
 		<div id="alertError" class="alert alert-danger"></div><br>
 		
+		</div><!-- End of Column -->
+		</div><!-- End of 1st Row -->
+		
+		<div class="row">
 		<div id="divItemsGrid">
 			<%
 				Item itemObj = new Item();
@@ -48,9 +52,9 @@
 			%>
 		</div>
 		
-	</div>
-	</div>
-	</div>
+	</div><!-- End of 2nd Row  -->
+	
+	</div><!-- End of Container -->
 	
 	<footer class="page-footer font-small special-color-dark pt-4">
 	

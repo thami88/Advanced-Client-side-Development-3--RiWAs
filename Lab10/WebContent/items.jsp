@@ -8,7 +8,14 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Items Management</title>
-<link rel="stylesheet" href="Views/bootstrap.min.css">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/css/mdb.min.css" rel="stylesheet">
+
 <script src="Components/jquery-3.5.0.min.js"></script>
 <script src="Components/items.js"></script>
 </head>
@@ -45,7 +52,13 @@
 	</div>
 	</div>
 	
-	<footer class="page-footer font-small mdb-color lighten-3 pt-4"></footer>
+	<footer class="page-footer font-small special-color-dark pt-4">
+	
+	  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">Items Management</div>
+  <!-- Copyright -->
+	
+	</footer>
 
 </body>
 </html>

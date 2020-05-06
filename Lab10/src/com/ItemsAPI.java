@@ -82,7 +82,7 @@ public class ItemsAPI extends HttpServlet {
 			
 			scanner.close();
 			
-			String[] params = queryString.split("%");
+			String[] params = queryString.split("&");
 			
 			for (String param : params) {
 				

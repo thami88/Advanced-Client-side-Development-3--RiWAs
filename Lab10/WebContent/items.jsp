@@ -80,17 +80,20 @@
 
 						<p class="h4 mb-4">Add / Update Items</p>
 
-						<input id="itemCode" name="itemCode" type="text"
-							class="form-control mb-4" placeholder="Item Code:"><br>
-						<input id="itemName" name="itemName" type="text"
-							class="form-control mb-4" placeholder="Item Name:"><br>
-						<input id="itemPrice" name="itemPrice" type="text"
-							class="form-control mb-4" placeholder="Item Price:"><br>
-						<input id="itemDesc" name="itemDesc" type="text"
-							class="form-control mb-4" placeholder="Item Description:"><br>
+						<div class="d-flex justify-content-center">
+							<input id="itemCode" name="itemCode" type="text" class="form-control form-control-sm" style="width: 300px;" placeholder="Item Code:">
+						</div><br>
+						<div class="d-flex justify-content-center">
+							<input id="itemName" name="itemName" type="text" class="form-control form-control-sm" style="width: 300px;" placeholder="Item Name:">
+						</div><br>
+						<div class="d-flex justify-content-center">
+							<input id="itemPrice" name="itemPrice" type="text" class="form-control form-control-sm" style="width: 300px;" placeholder="Item Price:">
+						</div><br>
+						<div class="d-flex justify-content-center">
+							<input id="itemDesc" name="itemDesc" type="text" class="form-control form-control-sm" style="width: 300px;" placeholder="Item Description:">
+						</div><br>
 
-						<input id="btnSave" name="btnSave" type="button" value="Save"
-							class="btn btn-dark-green"> <input type="hidden"
+						<input id="btnSave" name="btnSave" type="button" value="Save" class="btn btn-dark-green"> <input type="hidden"
 							id="hidItemIDSave" name="hidItemIDSave" value="">
 
 					</form><br>

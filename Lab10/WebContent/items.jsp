@@ -98,8 +98,14 @@
 
 					</form><br>
 
-					<div id="alertSuccess" class="alert alert-success"></div>
-					<div id="alertError" class="alert alert-danger"></div>
+					<!-- Alert For Success Message -->
+					<div class="d-flex justify-content-center">
+						<div id="alertSuccess" class="alert alert-success text-center" style="width: 300px;"></div>
+					</div>
+					<!-- Alert For Error Message -->
+					<div class="d-flex justify-content-center">
+						<div id="alertError" class="alert alert-danger text-center" style="width: 300px;"></div>
+					</div>
 
 				</div>
 				<!-- End of Column -->

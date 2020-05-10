@@ -93,7 +93,7 @@
 							<input id="itemDesc" name="itemDesc" type="text" class="form-control form-control-sm" style="width: 300px;" placeholder="Item Description:">
 						</div><br>
 
-						<input id="btnSave" name="btnSave" type="button" value="Save" class="btn btn-dark-green"> <input type="hidden"
+						<input id="btnSave" name="btnSave" type="button" value="Save" class="btn btn-dark-green btn-sm"> <input type="hidden"
 							id="hidItemIDSave" name="hidItemIDSave" value="">
 
 					</form><br>

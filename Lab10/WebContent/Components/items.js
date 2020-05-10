@@ -149,22 +149,22 @@ function validateItemForm() {
 	}
 	// NAME
 	if ($("#itemName").val().trim() == "") {
-		return "Insert Item Name.";
+		return "Insert Item Name !";
 	}
 	// PRICE-------------------------------
 	if ($("#itemPrice").val().trim() == "") {
-		return "Insert Item Price.";
+		return "Insert Item Price !";
 	}
 	// is numerical value
 	var tmpPrice = $("#itemPrice").val().trim();
 	if (!$.isNumeric(tmpPrice)) {
-		return "Insert a numerical value for Item Price.";
+		return "Insert a numerical value for Item Price !";
 	}
 	// convert to decimal price
 	$("#itemPrice").val(parseFloat(tmpPrice).toFixed(2));
 	// DESCRIPTION------------------------
 	if ($("#itemDesc").val().trim() == "") {
-		return "Insert Item Description.";
+		return "Insert Item Description !";
 	}
 	return true;
 }
